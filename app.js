@@ -23,6 +23,24 @@ class Person  {     // -> La primera letra es mayúscula, así el programa recon
 
 let miranda = new Person('Miranda', 'Naranjo')   // Crear una instancia a partir del objeto constructor anterior
 miranda.greeting()   // --> ejecuta método
+miranda.age = 28 // --> agrega propiedad
 
-miranda.__proto__ 
+// hasOwnProperty
+
+miranda.hasOwnProperty('age');
+miranda.__proto__.hasOwnProperty('greeting');
+
+let fabian = new Person ('Fabián', 'Bravo');
+
+// Comprobar si comparten el mismo padre con miranda.
+miranda.__proto__ === fabian.__proto__   // --> devuelve true
+
+fabian.greeting()
+
+// Agregar método
+fabian.__proto__.goodbye = function() {  
+  return 'Chao pescao'
+}
+
+fabian.goodbye()
 
