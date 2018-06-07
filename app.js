@@ -37,10 +37,19 @@ miranda.__proto__ === fabian.__proto__   // --> devuelve true
 
 fabian.greeting()
 
-// Agregar método
-fabian.__proto__.goodbye = function() {  
+// Agregar método al prototipo indicandoselo a la instancia del objeto 
+fabian.__proto__.goodbye = function() {    
   return 'Chao pescao'
 }
 
 fabian.goodbye()
+
+
+// Crea un objeto nuevo (Coach )heredado del padre (Person) y le agrega nueva propiedad con su valor.
+class Coach extends Person {
+  constructor(name, lastName) {
+    super(name, lastName);
+    this.track = 'Front End';
+  }
+}
 
